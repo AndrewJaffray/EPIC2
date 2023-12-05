@@ -14,15 +14,20 @@ public class Vehicle {
     private String reg;
     private int defaultRating = 1;
 
+    private char icon = 'V';
+
     public Vehicle(String reg, String vehicleSize, String vehicleBrand) {
         this.driverName = driverName;
         this.vehicleBrand = vehicleBrand;
         this.reg = reg;
         this.driverRating = defaultRating; //all drivers start at rating of 1
-
+        this.icon = icon;
 
     }
 
+    public char getIcon(){
+        return icon;
+    }
 
     public String getVehicleBrand() {
         return vehicleBrand;
