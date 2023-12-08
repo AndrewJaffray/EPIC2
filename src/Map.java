@@ -1,11 +1,15 @@
-public class Map {
+import java.util.LinkedList;
 
-    private static final int MAP_SIZE = 10;
-    private static final char EMPTY = '.';
+public class Map {
+    private static LinkedList<Location> car;
+    private static final char taxiIcon = 'V';
+
+    public static final int MAP_SIZE = 10;
+    public static final char EMPTY = '.';
     public static final char Vehicle = 'V';
     public static final char Person = 'P';
 
-    private char[][] map;
+    public char[][] map;
 
     public Map() {
         map = new char[MAP_SIZE][MAP_SIZE];
@@ -32,6 +36,12 @@ public class Map {
 public void placeOnMap(int x, int y, char type){
  map[x][y] = type;
 
+    }
+    int startX = 5;
+    int startY = 5;
+    public void spawnCar() {
+        car.add(new Location(startX, startY));
+        map[startX][startY] = taxiIcon;
     }
 
 
